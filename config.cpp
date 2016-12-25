@@ -28,7 +28,9 @@
 	DESTRUCTMAN = 5,
 	DESTRUCTBUILDING = 1,
 };*/
-
+#include "basicDefines_A3.hpp"
+#include "BIS_AddonInfo.hpp"
+#include "CfgMovesBasic.hpp"
 
 
 class CfgPatches
@@ -232,7 +234,7 @@ class CfgVehicles
 		faction = "OPF_F";
 		animated=1;
 		transportSoldier = 70;
-		crew = "Sukhoi_Pilot";
+		crew = "B_Helipilot_F";
 		damping=40;
 		damperSize = 0.12;
 		driverAction="pilot";
