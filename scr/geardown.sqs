@@ -1,0 +1,23 @@
+_plane = _this select 0
+_plane animate ["md1", 1]
+_plane animate ["mdl", 1]
+_plane animate ["mdr", 1]
+_plane animate ["ndl", 1]
+_plane animate ["ndr", 1]
+_plane animate ["fdl", 0]
+_plane animate ["fdr", 0]
+~1
+_plane animate ["LeftGear", 0]
+_plane animate ["RightGear", 0]
+_plane animate ["NoseGear", 0]
+~2
+
+_plane setobjecttexture[3, "\il76\wheel.pac"]
+_plane setobjecttexture[4, ""]
+
+_plane animate ["md1", 0]
+_plane animate ["mdl", 0]
+_plane animate ["mdr", 0]
+_plane animate ["ndl", 0]
+_plane animate ["ndr", 0]
+exit

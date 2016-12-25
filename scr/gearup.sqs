@@ -1,0 +1,27 @@
+_plane = _this select 0
+?(speed _plane > 100) : goto "Normal"
+_plane action ["LAND GEAR"]
+exit 
+
+#Normal
+_plane setobjecttexture[4, "\il76\wheel.pac"]
+_plane setobjecttexture[3, ""]
+
+_plane animate ["md1", 1]
+_plane animate ["mdl", 1]
+_plane animate ["mdr", 1]
+_plane animate ["ndl", 1]
+_plane animate ["ndr", 1]
+~1
+_plane animate ["RightGear", 1]
+_plane animate ["LeftGear", 1]
+_plane animate ["NoseGear", 1]
+~2
+_plane animate ["md1", 0]
+_plane animate ["mdl", 0]
+_plane animate ["mdr", 0]
+_plane animate ["ndl", 0]
+_plane animate ["ndr", 0]
+_plane animate ["fdl", 1]
+_plane animate ["fdr", 1]
+exit

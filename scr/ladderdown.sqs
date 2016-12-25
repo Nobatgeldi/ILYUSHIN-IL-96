@@ -1,0 +1,11 @@
+_il76 = _this select 0
+
+;_il76 say "ladder"
+_il76 animate ["RC_ladder",1]
+
+
+exit
+
+
+
+

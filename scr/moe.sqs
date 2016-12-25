@@ -1,0 +1,6 @@
+_plane = _this select 0
+
+_plane setobjecttexture[3, "\il76\f2m.pac"]
+_plane setobjecttexture[4, "\il76\hvm.pac"]
+
+exit
