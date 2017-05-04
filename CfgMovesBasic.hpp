@@ -18,7 +18,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 			speed=0.5;
 			looped="false";
 			terminal=1;
-			file="\il96\anim\kia.rtm";
+			file="\ILYUSHIN-IL-96\anim\kia.rtm";
 			connectTo[]=
 			{
 				"DeadState",
@@ -27,7 +27,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		};
 		class pilot: Crew
 		{
-			file="\il96\anim\pilot.rtm";
+			file="\ILYUSHIN-IL-96\anim\pilot.rtm";
 			interpolateTo[]=
 			{
 				"pilot_dead",
@@ -36,7 +36,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		};
 		class commander: Crew
 		{
-			file="\il96\anim\commander.rtm";
+			file="\ILYUSHIN-IL-96\anim\commander.rtm";
 			interpolateTo[]=
 			{
 				"pilot_dead",

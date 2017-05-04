@@ -228,7 +228,7 @@ class CfgVehicles
 		simulation="airplane";
 		unitInfoType="UnitInfoAirplane";
 		_generalMacro="Plane";
-		model="\il96\il96.p3d";
+		model="\ILYUSHIN-IL-96\il96.p3d";
 		displayName="Il-96";
 		side=0;
 		faction = "OPF_F";
@@ -257,10 +257,10 @@ class CfgVehicles
 		type=2;
 		gunnerAction = "pilot";
 		flyInHeight=200;
-		gunnerOpticsModel = "\il96\rkt_fencer_optics";
+		gunnerOpticsModel = "\ILYUSHIN-IL-96\rkt_fencer_optics";
 		gunnerOpticsColor[] = {1, 1, 1, 1};
-		Icon = "\il96\icon.paa";
-		picture = "\il96\picture.paa";
+		Icon = "\ILYUSHIN-IL-96\icon.paa";
+		picture = "\ILYUSHIN-IL-96\picture.paa";
 		mapSize = 50;
 		accuracy = 0.500000;
 		camouflage = 10;
@@ -334,33 +334,33 @@ class CfgVehicles
 		};
 		soundEngineOnInt[]=
 		{
-			"il96\engine_on.wav",
+			"ILYUSHIN-IL-96\engine_on.wav",
 			0.39810699,
 			1
 		};
 		soundEngineOnExt[]=
 		{
-			"il96\engine_on.wav",
+			"ILYUSHIN-IL-96\engine_on.wav",
 			0.39810699,
 			1,
 			700
 		};
 		soundEngineOffInt[]=
 		{
-			"il96\xnk8_shut.wav",
+			"ILYUSHIN-IL-96\xnk8_shut.wav",
 			0.39810699,
 			1
 		};
 		soundEngineOffExt[]=
 		{
-			"il96\xnk8_shut.wav",
+			"ILYUSHIN-IL-96\xnk8_shut.wav",
 			0.39810699,
 			1,
 			700
 		};
 		soundEngine[]=
 		{
-			"\il96\Engine.ogg",
+			"\ILYUSHIN-IL-96\Engine.ogg",
 			4,
 			1.2
 		};
@@ -370,7 +370,7 @@ class CfgVehicles
 			{
 				sound[]=
 				{
-					"\il96\Engine.ogg",
+					"\ILYUSHIN-IL-96\Engine.ogg",
 					2.5118899,
 					1,
 					1600
@@ -382,7 +382,7 @@ class CfgVehicles
 			{
 				sound[]=
 				{
-					"\il96\Engine.ogg",
+					"\ILYUSHIN-IL-96\Engine.ogg",
 					2.5118899,
 					1.3,
 					1800
@@ -395,7 +395,7 @@ class CfgVehicles
 			{
 				sound[]=
 				{
-					"\il96\Engine.ogg",
+					"\ILYUSHIN-IL-96\Engine.ogg",
 					2.5118899,
 					1.1,
 					2000
@@ -420,7 +420,7 @@ class CfgVehicles
 			{
 				sound[]=
 				{
-					"\il96\Engine2.WAV",
+					"\ILYUSHIN-IL-96\Engine2.WAV",
 					0.56234097,
 					1
 				};
@@ -431,7 +431,7 @@ class CfgVehicles
 			{
 				sound[]=
 				{
-					"\il96\Engine2.WAV",
+					"\ILYUSHIN-IL-96\Engine2.WAV",
 					1,
 					1
 				};
@@ -442,7 +442,7 @@ class CfgVehicles
 			{
 				sound[]=
 				{
-					"\il96\Engine2.WAV",
+					"\ILYUSHIN-IL-96\Engine2.WAV",
 					0.56234097,
 					1.1
 				};
@@ -476,7 +476,7 @@ class CfgVehicles
     noseDownCoef = 1.1;	// how much goes nose down during turns
 
 		//maneuvrability=40.0;
-		landingAoa = "rad 2"//7*3.1415/180//"rad 55";
+		landingAoa = "rad 15"//7*3.1415/180//"rad 55";
 		//landingAoa = 8*3.1415/180;
 		maxSpeed= 910;
 
@@ -498,12 +498,12 @@ class CfgVehicles
 
 		extCameraPosition[] = {0, 11, -58};
 
-		/*class ViewPilot: ViewPilot
+		class ViewPilot: ViewPilot
 		{
 			initFov = 0.8; minFov = 0.3; maxFov = 1.2;
-			initAngleX = 0; minAngleX = -40; maxAngleX = +85;
-			initAngleY = 0; minAngleY = -130; maxAngleY = 130;
-		};*/
+			initAngleX = 0; minAngleX = -180; maxAngleX = 180;
+			initAngleY = 0; minAngleY = -180; maxAngleY = 180;
+		};
 
 		class Turrets {
 			class MainTurret : NewTurret {
@@ -561,8 +561,8 @@ class CfgVehicles
 
     class EventHandlers
     {
-     Init = "_this execVM ""\il96\scr\damage.sqf"", _this execVM ""\il96\scr\common_init.sqf"",_this execVM ""\il96\scr\gear_trigger.sqf""";
-     engine = "_this exec ""\il96\scr\dverclose.sqs"", [_this select 0] exec ""\il96\scr\common_init.sqs""";
+     Init = "_this execVM ""\ILYUSHIN-IL-96\scr\damage.sqf"", _this execVM ""\ILYUSHIN-IL-96\scr\common_init.sqf"",_this execVM ""\ILYUSHIN-IL-96\scr\gear_trigger.sqf""";
+     engine = "_this exec ""\ILYUSHIN-IL-96\scr\dverclose.sqs"", [_this select 0] exec ""\ILYUSHIN-IL-96\scr\common_init.sqs""";
      fired = "_this call BIS_Effects_EH_Fired;";
 		 killed = "_this call BIS_Effects_EH_Killed;";
     };
@@ -979,7 +979,7 @@ class CfgVehicles
 				showWindow = 0;
 				onlyForplayer = 0;
 				condition = "this animationPhase ""RC_dver1"" < 0.5 AND Alive(this)";
-				statement = "[this] exec ""\il96\scr\dveropen.sqs""";
+				statement = "[this] exec ""\ILYUSHIN-IL-96\scr\dveropen.sqs""";
 			};
 			class closedver
 			{
@@ -989,7 +989,7 @@ class CfgVehicles
 				showWindow = 0;
 				onlyForplayer = 0;
 				condition = "this animationPhase ""RC_dver1"" > 0.5 AND Alive(this)";
-				statement = "[this] exec ""\il96\scr\dverclose.sqs""";
+				statement = "[this] exec ""\ILYUSHIN-IL-96\scr\dverclose.sqs""";
       };
     	class openladder
 			{
@@ -999,7 +999,7 @@ class CfgVehicles
 				showWindow = 0;
 				onlyForplayer = 0;
 				condition = "this animationPhase ""RC_ladder"" < 0.5 AND Alive(this) and this animationPhase ""RC_dver1"" > 0.5";
-				statement = "[this] exec ""\il96\scr\ladderdown.sqs""";
+				statement = "[this] exec ""\ILYUSHIN-IL-96\scr\ladderdown.sqs""";
 			};
 			class closeladder
 			{
@@ -1009,7 +1009,7 @@ class CfgVehicles
 				showWindow = 0;
 				onlyForplayer = 0;
 				condition = "this animationPhase ""RC_ladder"" > 0.5 AND Alive(this)";
-				statement = "[this] exec ""\il96\scr\ladderup.sqs""";
+				statement = "[this] exec ""\ILYUSHIN-IL-96\scr\ladderup.sqs""";
       };
 		  class loadcargo
 			{
@@ -1019,7 +1019,7 @@ class CfgVehicles
 				radius=16;
 				showWindow = 0;
 				condition = "((vehicle player != vehicle this) and (vehicle player != player) and (speed vehicle this < 5) AND Alive(this))";
-				statement = "[this, vehicle player, player] execVM ""\il96\scr\attach.sqf""";
+				statement = "[this, vehicle player, player] execVM ""\ILYUSHIN-IL-96\scr\attach.sqf""";
 			};
 			class unloadcargo
 			{
@@ -1029,7 +1029,7 @@ class CfgVehicles
 				radius=30;
 				showWindow = 0;
 				condition = "(vehicle player != vehicle this) and (vehicle player != player) AND Alive(this)";
-				statement = "[this, vehicle player, player] execVM ""\il96\scr\detach.sqf""";
+				statement = "[this, vehicle player, player] execVM ""\ILYUSHIN-IL-96\scr\detach.sqf""";
 			};
 			class unloadcargoall
 			{
@@ -1039,7 +1039,7 @@ class CfgVehicles
 				radius=30;
 				showWindow = 0;
 				condition = "(player in this) and ((count (position this nearEntities 30)) > 1) and (getpos this select 2 > 300) AND Alive(this)";
-				statement = "[this, vehicle player, player] execVM ""\il96\scr\detachall.sqf""";
+				statement = "[this, vehicle player, player] execVM ""\ILYUSHIN-IL-96\scr\detachall.sqf""";
 			};
 			class parasoldiers
 			{
@@ -1049,7 +1049,7 @@ class CfgVehicles
 				radius=30;
 				showWindow = 0;
 				condition = "(player in this) and (count crew (vehicle this) > 6) and (getpos this select 2 > 100) AND Alive(this)";
-				statement="[this, player] execVM ""\il96\scr\paragroup.sqf""";
+				statement="[this, player] execVM ""\ILYUSHIN-IL-96\scr\paragroup.sqf""";
 			};
  		};
 	};
@@ -1063,10 +1063,10 @@ class CfgVehicles
 									"il96wingBase"
 								};
 		hiddenSelectionsTextures[] = 	{
-											"\il96\afl80\il96bottom.paa",
-											"\il96\afl80\il96fuselage.paa",
-											"\il96\afl80\il96krylo.paa",
-											"\il96\afl80\il96wingBase.paa"
+											"\ILYUSHIN-IL-96\afl80\il96bottom.paa",
+											"\ILYUSHIN-IL-96\afl80\il96fuselage.paa",
+											"\ILYUSHIN-IL-96\afl80\il96krylo.paa",
+											"\ILYUSHIN-IL-96\afl80\il96wingBase.paa"
 										};
 	};
 	class il96_rus96016: il96
@@ -1079,10 +1079,10 @@ class CfgVehicles
 									"il96wingBase"
 								};
 		hiddenSelectionsTextures[] = 	{
-											"\il96\rus96016\il96bottom.paa",
-											"\il96\rus96016\il96fuselage.paa",
-											"\il96\rus96016\il96krylo.paa",
-											"\il96\rus96016\il96wingBase.paa"
+											"\ILYUSHIN-IL-96\rus96016\il96bottom.paa",
+											"\ILYUSHIN-IL-96\rus96016\il96fuselage.paa",
+											"\ILYUSHIN-IL-96\rus96016\il96krylo.paa",
+											"\ILYUSHIN-IL-96\rus96016\il96wingBase.paa"
 										};
 	};
  };
