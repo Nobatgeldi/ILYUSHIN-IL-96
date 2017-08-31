@@ -1,4 +1,4 @@
-/*#define TEast 0
+#define TEast 0
 #define TWest 1
 #define TGuerrila 2
 #define TCivilian 3
@@ -12,9 +12,9 @@
 
 #define private 0
 #define protected 1
-#define public 2/*
+#define public 2
 
-/*enum {
+enum {
 	DESTRUCTENGINE = 2,
 	DESTRUCTDEFAULT = 6,
 	DESTRUCTWRECK = 7,
@@ -27,7 +27,7 @@
 	STABILIZEDINAXESNONE = 0,
 	DESTRUCTMAN = 5,
 	DESTRUCTBUILDING = 1,
-};*/
+};
 #include "basicDefines_A3.hpp"
 #include "BIS_AddonInfo.hpp"
 #include "CfgMovesBasic.hpp"
@@ -47,12 +47,6 @@ class CfgPatches
 		requiredAddons[] = {"wop_gui"};
 	};
 };
-
-/*class CfgVehicleClasses {
-	class wings_of_union {
-		displayName = "$STR_WU_NAME";
-	};
-};*/
 
 
 class CfgSounds
@@ -222,14 +216,14 @@ class CfgVehicles
 	};
 	class il96: Plane
 	{
-    scope=2;
-    destrType = "DestructWreck";
+        scope=2;
+        destrType = "DestructWreck";
 		vehicleclass = "Air";
 		simulation="airplane";
-		unitInfoType="UnitInfoAirplane";
+		unitInfoType="RscOptics_CAS_Pilot";
 		_generalMacro="Plane";
 		model="\ILYUSHIN-IL-96\il96.p3d";
-		displayName="Il-96";
+		displayName="ILYUSHIN IL-96";
 		side=0;
 		faction = "OPF_F";
 		animated=1;
@@ -240,7 +234,7 @@ class CfgVehicles
 		driverAction="pilot";
 		cargoAction[]={
 			"pilot",
-		  "passenger_generic01_leanleft",
+		    "passenger_generic01_leanleft",
 			"passenger_generic01_foldhands",
 			"passenger_generic01_leanright",
 			"passenger_generic01_leanleft",
@@ -248,7 +242,7 @@ class CfgVehicles
 			"passenger_generic01_leanleft",
 			"passenger_generic01_foldhands",
 			"passenger_generic01_leanleft"
-			};
+        };
         cargoIsCoDriver[] = {1,1};
         hasGunner=1;
 		driverIsCommander = 1;
@@ -257,9 +251,9 @@ class CfgVehicles
 		type=2;
 		gunnerAction = "pilot";
 		flyInHeight=200;
-		gunnerOpticsModel = "\ILYUSHIN-IL-96\rkt_fencer_optics";
+		gunnerOpticsModel = "";
 		gunnerOpticsColor[] = {1, 1, 1, 1};
-		Icon = "\ILYUSHIN-IL-96\icon.paa";
+		icon = "\ILYUSHIN-IL-96\icon.paa";
 		picture = "\ILYUSHIN-IL-96\picture.paa";
 		mapSize = 50;
 		accuracy = 0.500000;
@@ -270,41 +264,6 @@ class CfgVehicles
 		class Library {
 			libTextDesc = "dfsdfsdf";
 		};
-		/*class Sounds
-		{
-			class EngineLowOut
-			{
-				sound[]={ "il96\XB223.WAV", 4, 1.2};
-				frequency="1.0 min (rpm + 0.5)";
-				volume="engineOn*camPos*(rpm factor[0.85, 0])";
-			};
-			class EngineHighOut
-			{
-				sound[]={"il96\XB223.WAV",4,1.2};
-				frequency="1";
-				volume="engineOn*camPos*(rpm factor[0.55, 1.0])";
-			};
-			class EngineLowIn
-			{
-				sound[]={"il96\XB223.WAV",4,1.2};
-				frequency="1.0 min (rpm + 0.5)";
-				volume="(1-camPos)*(engineOn*(rpm factor[0.85, 0]))";
-			};
-			class EngineHighIn
-			{
-				sound[]={"il96\XB223.WAV",4,1.2};
-				frequency="1";
-				volume="(1-camPos)*(engineOn*(rpm factor[0.55, 1.0]))";
-			};
-		};
-		soundEngine[]={"il96\XB223.WAV",4,1.2};
-		soundEnviron[]={"Objects\noise",db-60,1.0};			// Cessna
-		soundServo[]={"il96\Sound\IL-96flaps.wav",db-10,1};			// Cessna
-		soundLandCrash[]={"\il96\sounds\tire.wav",db-10,1};
-		soundEngineOnInt[] = {"il96\engine_on.wav", 0.562341, 1.000000};
-		soundEngineOnExt[] = {"il96\engine_on.wav", 0.562341, 1.000000, 900};
-		soundEngineOffInt[] = {"il96\xnk8_shut.wav", 0.562341, 1.000000};
-		soundEngineOffExt[] = {"il96\xnk8_shut.wav", 0.562341, 1.000000, 900};*/
 		soundFlapsUp[]=
 		{
 			"A3\Sounds_F_EPC\CAS_02\Flaps_Up",
@@ -325,7 +284,7 @@ class CfgVehicles
 			db-10,
 			1
 		};
-	  soundServo[]=
+	    soundServo[]=
 		{
 			"il96\Sound\IL-96flaps.wav",
 			0.2,
@@ -465,20 +424,18 @@ class CfgVehicles
 		cargoCompartments[] = {"Compartment1"};
 		insideSoundCoef=0.15000;
 		airBrake = true;
-    cabinOpening=true;
-    flaps = 1;
-    transportVehiclesCount=1;
-    transportVehiclesMass=50000;
-    castCargoShadow=0;
-    castDriverShadow=0;
-    flapsFrictionCoef = 0.300000;
+        cabinOpening=true;
+        flaps = 1;
+        transportVehiclesCount=1;
+        transportVehiclesMass=50000;
+        castCargoShadow=0;
+        castDriverShadow=0;
+        flapsFrictionCoef = 0.300000;
 		wheelSteeringSensitivity = 9.000000;
-    noseDownCoef = 1.1;	// how much goes nose down during turns
-
+        noseDownCoef = 1.1;	// how much goes nose down during turns
 		//maneuvrability=40.0;
 		landingAoa = "rad 15"//7*3.1415/180//"rad 55";
-		//landingAoa = 8*3.1415/180;
-		maxSpeed= 910;
+		maxSpeed= 1220;
 
 		landingSpeed = 210;
 
@@ -559,13 +516,13 @@ class CfgVehicles
 			};
 		};
 
-    class EventHandlers
-    {
-     Init = "_this execVM ""\ILYUSHIN-IL-96\scr\damage.sqf"", _this execVM ""\ILYUSHIN-IL-96\scr\common_init.sqf"",_this execVM ""\ILYUSHIN-IL-96\scr\gear_trigger.sqf""";
-     engine = "_this exec ""\ILYUSHIN-IL-96\scr\dverclose.sqs"", [_this select 0] exec ""\ILYUSHIN-IL-96\scr\common_init.sqs""";
-     fired = "_this call BIS_Effects_EH_Fired;";
-		 killed = "_this call BIS_Effects_EH_Killed;";
-    };
+        class EventHandlers
+        {
+         Init = "_this execVM ""\ILYUSHIN-IL-96\scr\damage.sqf"", _this execVM ""\ILYUSHIN-IL-96\scr\common_init.sqf"",_this execVM ""\ILYUSHIN-IL-96\scr\gear_trigger.sqf""";
+         engine = "_this exec ""\ILYUSHIN-IL-96\scr\dverclose.sqs"", [_this select 0] exec ""\ILYUSHIN-IL-96\scr\common_init.sqs""";
+         fired = "_this call BIS_Effects_EH_Fired;";
+             killed = "_this call BIS_Effects_EH_Killed;";
+        };
 
 
 		class DestructionEffects {};
@@ -738,208 +695,208 @@ class CfgVehicles
 			   effect = "ExhaustsEffectPlane";
 		   };
 		};
-    class AnimationSources
-		{
+        class AnimationSources
+        {
 
-			class ngear
-			{
-				source = "user";
-				initPhase = 0;
-				animPeriod =3;
-			};
-			class bgear
-			{
-				source = "user";
-				initPhase = 0;
-				animPeriod =3;
-			};
-			class gdoor_fr
-			{
-				source = "user";
-				initPhase = 0;
-				animPeriod =3;
-			};
-			class gdoor_fr1
-			{
-				source = "user";
-				initPhase = 0;
-				animPeriod =3;
-			};
-			class gdoor_fr2
-			{
-				source = "user";
-				initPhase = 0;
-				animPeriod =3;
-			};
-			class gdoor_fl
-			{
-				source = "user";
-				initPhase = 0;
-				animPeriod =3;
-			};
-			class gdoor_fl1
-			{
-				source = "user";
-				initPhase = 0;
-				animPeriod =3;
-			};
-			class gdoor_fl2
-			{
-				source = "user";
-				initPhase = 0;
-				animPeriod =3;
-			};
-			class gear_l
-			{
-				source = "user";
-				initPhase = 0;
-				animPeriod =3;
-			};
-			class gear_l_st
-			{
-				source = "user";
-				initPhase = 0;
-				animPeriod =3;
-			};
-			class gdoor_l
-			{
-				source = "user";
-				initPhase = 0;
-				animPeriod =3;
-			};
-			class gdoor_l_st
-			{
-				source = "user";
-				initPhase = 0;
-				animPeriod =3;
-			};
-			class gdoor_l2
-			{
-				source = "user";
-				initPhase = 0;
-				animPeriod =3;
-			};
+            class ngear
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod =3;
+            };
+            class bgear
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod =3;
+            };
+            class gdoor_fr
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod =3;
+            };
+            class gdoor_fr1
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod =3;
+            };
+            class gdoor_fr2
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod =3;
+            };
+            class gdoor_fl
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod =3;
+            };
+            class gdoor_fl1
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod =3;
+            };
+            class gdoor_fl2
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod =3;
+            };
+            class gear_l
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod =3;
+            };
+            class gear_l_st
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod =3;
+            };
+            class gdoor_l
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod =3;
+            };
+            class gdoor_l_st
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod =3;
+            };
+            class gdoor_l2
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod =3;
+            };
 
-			class gear_r
-			{
-				source = "user";
-				initPhase = 0;
-				animPeriod =3;
-			};
-			class gear_r_st
-			{
-				source = "user";
-				initPhase = 0;
-				animPeriod =3;
-			};
-			class gdoor_r
-			{
-				source = "user";
-				initPhase = 0;
-				animPeriod =3;
-			};
-			class gdoor_r_st
-			{
-				source = "user";
-				initPhase = 0;
-				animPeriod =3;
-			};
-			class gdoor_r2
-			{
-				source = "user";
-				initPhase = 0;
-				animPeriod =3;
-			};
+            class gear_r
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod =3;
+            };
+            class gear_r_st
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod =3;
+            };
+            class gdoor_r
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod =3;
+            };
+            class gdoor_r_st
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod =3;
+            };
+            class gdoor_r2
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod =3;
+            };
 
-			class gdoor_br
-			{
-				source = "user";
-				initPhase = 0;
-				animPeriod =3;
-			};
-			class gdoor_br2
-			{
-				source = "user";
-				initPhase = 0;
-				animPeriod =3;
-			};
-			class gdoor_bl
-			{
-				source = "user";
-				initPhase = 0;
-				animPeriod =3;
-			};
-			class gdoor_bl2
-			{
-				source = "user";
-				initPhase = 0;
-				animPeriod =3;
-			};
-			class door
-			{
-				source = "user";
-				initPhase = 0;
-				animPeriod =5;
-			};
-			class HitGlass1 {
-				source = "Hit";
-				hitpoint = "HitGlass1";
-				raw = 1;
-			};
-			class HitGlass2 : HitGlass1 {
-				hitpoint = "HitGlass2";
-			};
-			class HitGlass3 : HitGlass1 {
-				hitpoint = "HitGlass3";
-			};
-			class HitGlass4 : HitGlass1 {
-				hitpoint = "HitGlass4";
-			};
-      class HitGlass5 : HitGlass1 {
-				hitpoint = "HitGlass5";
-			};
-			class Doors {
-				source = "user";
-				animPeriod = 4;
-				initPhase = 0;
-			};
-			class Doors1 {
-				source = "user";
-				animPeriod = 4;
-				initPhase = 0;
-			};
-			class Doors2 {
-				source = "user";
-				animPeriod = 2;
-				initPhase = 0;
-			};
-			class Doors3 {
-				source = "user";
-				animPeriod = 4;
-				initPhase = 0;
-			};
-			class Doors4 {
-				source = "user";
-				animPeriod = 4;
-				initPhase = 0;
-			};
+            class gdoor_br
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod =3;
+            };
+            class gdoor_br2
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod =3;
+            };
+            class gdoor_bl
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod =3;
+            };
+            class gdoor_bl2
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod =3;
+            };
+            class door
+            {
+                source = "user";
+                initPhase = 0;
+                animPeriod =5;
+            };
+            class HitGlass1 {
+                source = "Hit";
+                hitpoint = "HitGlass1";
+                raw = 1;
+            };
+            class HitGlass2 : HitGlass1 {
+                hitpoint = "HitGlass2";
+            };
+            class HitGlass3 : HitGlass1 {
+                hitpoint = "HitGlass3";
+            };
+            class HitGlass4 : HitGlass1 {
+                hitpoint = "HitGlass4";
+            };
+            class HitGlass5 : HitGlass1 {
+                hitpoint = "HitGlass5";
+            };
+            class Doors {
+                source = "user";
+                animPeriod = 4;
+                initPhase = 0;
+            };
+            class Doors1 {
+                source = "user";
+                animPeriod = 4;
+                initPhase = 0;
+            };
+            class Doors2 {
+                source = "user";
+                animPeriod = 2;
+                initPhase = 0;
+            };
+            class Doors3 {
+                source = "user";
+                animPeriod = 4;
+                initPhase = 0;
+            };
+            class Doors4 {
+                source = "user";
+                animPeriod = 4;
+                initPhase = 0;
+            };
 
-			class dver1 {
-				source = "user";
-				animPeriod = 1;
-				initPhase = 0;
-			};
-			class dver2 {
-				source = "user";
-				animPeriod = 1;
-				initPhase = 0;
-			};
-			class ladder {
-				source = "user";
-				animPeriod = 1;
-				initPhase = 0;
-			};
-		};
+            class dver1 {
+                source = "user";
+                animPeriod = 1;
+                initPhase = 0;
+            };
+            class dver2 {
+                source = "user";
+                animPeriod = 1;
+                initPhase = 0;
+            };
+            class ladder {
+                source = "user";
+                animPeriod = 1;
+                initPhase = 0;
+            };
+        };
 		// Radar stuff
 		irTarget=true;
 		irScanRange = 2000;
@@ -970,8 +927,8 @@ class CfgVehicles
 				condition = "this animationPhase ""RC_door"" > 0.5 AND Alive(this)";
 				statement = "[this] exec ""\il96\scr\Rampclose.sqs""";
 
-        };*/
-      class opendver
+            };*/
+            class opendver
 			{
 				displayName="$STR_il96_OD";
 				position="pos driver";
@@ -990,8 +947,8 @@ class CfgVehicles
 				onlyForplayer = 0;
 				condition = "this animationPhase ""RC_dver1"" > 0.5 AND Alive(this)";
 				statement = "[this] exec ""\ILYUSHIN-IL-96\scr\dverclose.sqs""";
-      };
-    	class openladder
+            };
+    	    class openladder
 			{
 				displayName="$STR_il96_DL";
 				position="pos driver";
@@ -1010,8 +967,8 @@ class CfgVehicles
 				onlyForplayer = 0;
 				condition = "this animationPhase ""RC_ladder"" > 0.5 AND Alive(this)";
 				statement = "[this] exec ""\ILYUSHIN-IL-96\scr\ladderup.sqs""";
-      };
-		  class loadcargo
+            };
+		    class loadcargo
 			{
 				onlyforplayer = false;
 				displayName = "$STR_il96_LC";
@@ -1055,35 +1012,39 @@ class CfgVehicles
 	};
 	class il96_afl80: il96
 	{
-		displayName = "IL-96A";
-		hiddenSelections[] = 	{
-									"il96bottom",
-									"il96fuselage",
-									"il96krylo",
-									"il96wingBase"
-								};
-		hiddenSelectionsTextures[] = 	{
-											"\ILYUSHIN-IL-96\afl80\il96bottom.paa",
-											"\ILYUSHIN-IL-96\afl80\il96fuselage.paa",
-											"\ILYUSHIN-IL-96\afl80\il96krylo.paa",
-											"\ILYUSHIN-IL-96\afl80\il96wingBase.paa"
-										};
+		displayName = "IL-96A AFL80";
+		hiddenSelections[] =
+		{
+            "il96bottom",
+            "il96fuselage",
+            "il96krylo",
+            "il96wingBase"
+        };
+		hiddenSelectionsTextures[] =
+		{
+            "\ILYUSHIN-IL-96\afl80\il96bottom.paa",
+            "\ILYUSHIN-IL-96\afl80\il96fuselage.paa",
+            "\ILYUSHIN-IL-96\afl80\il96krylo.paa",
+            "\ILYUSHIN-IL-96\afl80\il96wingBase.paa"
+        };
 	};
 	class il96_rus96016: il96
 	{
 		displayName = "IL-96 RUS-96-016";
-		hiddenSelections[] = 	{
-									"il96bottom",
-									"il96fuselage",
-									"il96krylo",
-									"il96wingBase"
-								};
-		hiddenSelectionsTextures[] = 	{
-											"\ILYUSHIN-IL-96\rus96016\il96bottom.paa",
-											"\ILYUSHIN-IL-96\rus96016\il96fuselage.paa",
-											"\ILYUSHIN-IL-96\rus96016\il96krylo.paa",
-											"\ILYUSHIN-IL-96\rus96016\il96wingBase.paa"
-										};
+		hiddenSelections[] =
+		{
+            "il96bottom",
+            "il96fuselage",
+            "il96krylo",
+            "il96wingBase"
+        };
+		hiddenSelectionsTextures[] =
+		{
+            "\ILYUSHIN-IL-96\rus96016\il96bottom.paa",
+            "\ILYUSHIN-IL-96\rus96016\il96fuselage.paa",
+            "\ILYUSHIN-IL-96\rus96016\il96krylo.paa",
+            "\ILYUSHIN-IL-96\rus96016\il96wingBase.paa"
+        };
 	};
  };
 };
